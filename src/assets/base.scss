@@ -1,0 +1,20 @@
+@import "./homepage";
+@import "./custom-button.styles";
+@import "./custom-input.styles";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(218, 206, 206);
+  height: 100%;
+  width: 100%;
+  color: black;
+}
+.component {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
