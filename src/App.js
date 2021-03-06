@@ -7,7 +7,7 @@ const BANNERMUTATION = gql`
     $brTitle: String
     $brSubtitle: String
   ) {
-    updatebannerComponents(
+    updateBannerComponents(
       where: { id: $id }
       data: { brTitle: $brTitle, brSubtitle: $brSubtitle }
     ) {
@@ -33,7 +33,7 @@ function App() {
     brSubtitle: "",
   });
   const { loading, error, data } = useQuery(bannerQuery);
-  const [updatebannerComponents, { errorBr }] = useMutation(BANNERMUTATION, {
+  const [updateBannerComponents, { errorBr }] = useMutation(BANNERMUTATION, {
     refetchQueries: ["BannerComponents"],
   });
   console.log(errorBr);
@@ -54,7 +54,7 @@ function App() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              updatebannerComponents({
+              updateBannerComponents({
                 variables: {
                   id: item.id,
                   brTitle: form.brTitle,
