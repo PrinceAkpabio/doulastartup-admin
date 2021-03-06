@@ -19,7 +19,7 @@ const BANNERMUTATION = gql`
 `;
 
 const bannerQuery = gql`
-  query BannerComponents {
+  query bannerComponents {
     bannerComponents {
       id
       brTitle
@@ -34,7 +34,7 @@ function App() {
   });
   const { loading, data } = useQuery(bannerQuery);
   const [updateBannerComponent, { error }] = useMutation(BANNERMUTATION, {
-    refetchQueries: ["BannerComponents"],
+    refetchQueries: ["bannerComponents"],
   });
   console.log("Form error:  ", error && error.message);
   console.log("Form error:  ", error && error.extraInfo);
