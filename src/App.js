@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useQuery, useMutation, gql } from "@apollo/client";
 
 const BANNERMUTATION = gql`
-  mutation UpdateBannerComponents(
+  mutation UpdateBannerComponent(
     $id: ID!
-    $brTitle: String
-    $brSubtitle: String
+    $brTitle: String!
+    $brSubtitle: String!
   ) {
-    updateBannerComponents(
+    updateBannerComponent(
       where: { id: $id }
       data: { brTitle: $brTitle, brSubtitle: $brSubtitle }
     ) {
@@ -32,11 +32,13 @@ function App() {
     brTitle: "",
     brSubtitle: "",
   });
-  const { loading, error, data } = useQuery(bannerQuery);
-  const [updateBannerComponents, { errorBr }] = useMutation(BANNERMUTATION, {
+  const { loading, data } = useQuery(bannerQuery);
+  const [updateBannerComponent, { error }] = useMutation(BANNERMUTATION, {
     refetchQueries: ["BannerComponents"],
   });
-  console.log(errorBr);
+  console.log("Form error:  ", error && error.message);
+  console.log("Form error:  ", error && error.extraInfo);
+  console.log("Form error:  ", error && error.graphQLErrors);
   // console.log(data.bannerComponents[0]);
   const handleInputOnChange = ({ currentTarget: { name, value } }) =>
     setForm((state) => ({ ...state, [name]: value }));
@@ -46,7 +48,7 @@ function App() {
   // };
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>ERROR: {error}</p>;
+  // if (error) return <p>ERROR: {error}</p>;
   return (
     <div className="App">
       {data.bannerComponents.map((item, i) => (
@@ -54,14 +56,14 @@ function App() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              updateBannerComponents({
+              updateBannerComponent({
                 variables: {
                   id: item.id,
                   brTitle: form.brTitle,
                   brSubtitle: form.brSubtitle,
                 },
               });
-              console.log(form.brSubtitle, form.brTitle);
+              console.log(form.brSubtitle, form.brTitle, item.id);
               setForm({
                 brTitle: "",
                 brSubtitle: "",
