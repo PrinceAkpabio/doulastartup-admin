@@ -13,3 +13,12 @@ export const bannerQuery = gql`
     }
   }
 `;
+
+export const assetsQuery = gql`
+  query Assets {
+    assets {
+      id
+      url
+    }
+  }
+`;

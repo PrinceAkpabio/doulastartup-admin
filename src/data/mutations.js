@@ -6,14 +6,13 @@ export const BANNERMUTATION = gql`
     $brTitle: String!
     $brSubtitle: String!
     $brID: ID!
-    $url: String!
   ) {
     updateBannerComponent(
       where: { id: $id }
       data: {
         brTitle: $brTitle
         brSubtitle: $brSubtitle
-        brImg: { update: { where: { id: $brID }, data: { url: $url } } }
+        brImg: { connect: { id: $brID } }
       }
     ) {
       id

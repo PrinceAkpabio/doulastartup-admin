@@ -24,8 +24,27 @@
       width: 100%;
 
       .form_image {
-        width: 200px;
-        height: 300px;
+        justify-self: center;
+        width: 180px;
+        height: 220px;
+      }
+
+      .assetsList {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .asset {
+          display: flex;
+          flex-direction: column;
+          width: 100px;
+          .input-group {
+            width: 100%;
+          }
+          .asset_image {
+            width: 90px;
+            height: 120px;
+          }
+        }
       }
     }
   }
