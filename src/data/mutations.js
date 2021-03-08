@@ -59,19 +59,32 @@ export const INTROMUTATION = gql`
 `;
 export const SERVICESMUTATION = gql`
   mutation UpdateServicesComponent(
-    $svrID: ID!
-    $svrLink1: String
-    $svrLink2: String
-    $svrLink3: String
+    $id: ID!
+    $svrLinkk1: String
+    $svrLinkk2: String
+    $svrLinkk3: String
+    $svrText1: String
+    $svrText2: String
+    $svrText3: String
   ) {
     updateServiceComponent(
-      where: { id: $svrID }
-      data: { svrLink1: $svrLink1, svrLink2: $svrLink2, svrLink3: $svrLink3 }
+      where: { id: $id }
+      data: {
+        svrLinkk1: $svrLinkk1
+        svrLinkk2: $svrLinkk2
+        svrLinkk3: $svrLinkk3
+        svrText1: $svrText1
+        svrText2: $svrText2
+        svrText3: $svrText3
+      }
     ) {
       id
-      svrLink1
-      svrLink2
-      svrLink3
+      svrLinkk1
+      svrLinkk2
+      svrLinkk3
+      svrText1
+      svrText2
+      svrText3
     }
   }
 `;

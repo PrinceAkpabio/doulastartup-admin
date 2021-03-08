@@ -45,7 +45,7 @@ function BannerComponent() {
     setForm((state) => ({ ...state, [name]: value }));
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>ERROR: {error}</p>;
+  if (error) return <p>{`ERROR: ${error}`}</p>;
   return (
     <div className="banner">
       {data.bannerComponents.map((item, i) => (

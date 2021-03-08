@@ -55,7 +55,7 @@ function IntroComponent() {
   };
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>ERROR: {error}</p>;
+  if (error) return <p>{`ERROR: ${error}`}</p>;
   return (
     <div className="banner">
       <div className="banner_content">

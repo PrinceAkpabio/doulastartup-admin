@@ -27,9 +27,12 @@ export const introQuery = gql`
     }
     serviceComponents {
       id
-      svrLink1
-      svrLink2
-      svrLink3
+      svrLinkk1
+      svrLinkk2
+      svrLinkk3
+      svrText1
+      svrText2
+      svrText3
     }
   }
 `;
