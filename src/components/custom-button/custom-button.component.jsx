@@ -1,10 +1,7 @@
-import React from 'react';
-
+import React from "react";
 
 const CustomButton = ({ children, ...otherProps }) => (
-  <button
-    className={'custom-button'}
-   {...otherProps}>
+  <button className={"custom-button"} {...otherProps}>
     {children}
   </button>
 );

@@ -5,6 +5,8 @@ export const BANNERMUTATION = gql`
     $id: ID!
     $brTitle: String!
     $brSubtitle: String!
+    $brBtnLink: String
+    $brBtnText: String
     $brID: ID!
   ) {
     updateBannerComponent(
@@ -12,12 +14,16 @@ export const BANNERMUTATION = gql`
       data: {
         brTitle: $brTitle
         brSubtitle: $brSubtitle
+        brBtnLinkk: $brBtnLink
+        brBtnText: $brBtnText
         brImg: { connect: { id: $brID } }
       }
     ) {
       id
       brTitle
       brSubtitle
+      brBtnText
+      brBtnLinkk
       brImg {
         id
         url

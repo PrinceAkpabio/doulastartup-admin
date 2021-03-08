@@ -10,6 +10,8 @@ export const bannerQuery = gql`
       }
       brTitle
       brSubtitle
+      brBtnText
+      brBtnLinkk
     }
   }
 `;

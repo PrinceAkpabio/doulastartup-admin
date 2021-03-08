@@ -5,7 +5,7 @@ import { bannerQuery, assetsQuery } from "../../data/queries";
 import { FormInput, Input } from "../custom-input/custom-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
-function BannerComponent() {
+function IntroComponent() {
   const [form, setForm] = useState({
     brTitle: "",
     brSubtitle: "",
@@ -121,4 +121,4 @@ function BannerComponent() {
   );
 }
 
-export default BannerComponent;
+export default IntroComponent;

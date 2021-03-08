@@ -1,20 +1,12 @@
 import React from "react";
 
-export const Input = ({
-  handleChange,
-  label,
-  value,
-  type,
-  accept,
-  ...otherProps
-}) => (
+export const Input = ({ handleChange, label, value, type, ...otherProps }) => (
   <div className="input-group">
     <input
       className="form-input"
       onChange={handleChange}
       type={type}
       value={value}
-      accept={accept}
       {...otherProps}
     />
     {label ? (
