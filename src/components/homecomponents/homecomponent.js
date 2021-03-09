@@ -1,5 +1,6 @@
 import React from "react";
 import BannerComponent from "./bannerComponent";
+import BioComponent from "./bioComponent";
 import IntroComponent from "./introComponent";
 import ServiceComponent from "./servicesComponent";
 
@@ -9,6 +10,7 @@ const HomeComponent = () => {
       <BannerComponent />
       <IntroComponent />
       <ServiceComponent />
+      <BioComponent />
     </div>
   );
 };
